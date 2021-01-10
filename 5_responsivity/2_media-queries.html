@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: tomato;
+        }
+
+        p
+        {
+            font-size: 16px;
+        }
+
+        @media (min-width: 800px) and (max-width: 1000px)
+        {
+            body {
+                background-color: lime;
+            }
+
+            p {
+                font-size: 24px;
+                border: 16px solid pink;
+            }
+        }
+
+        @media (min-width: 1001px)
+        {
+            body {
+                background-color: cadetblue;
+            }
+
+            p {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <p>Lorem ipsum dolor test...</p>
+    
+</body>
+</html>
