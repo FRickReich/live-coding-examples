@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <style>
+        *
+        {
+            box-sizing: border-box;
+        }
+        .container-equal
+        {
+            display: flex;
+            flex-wrap: wrap;
+            border: 5px solid tomato;
+            width: 500px;
+            height: 250px;
+        }
+        .box-equal
+        {
+            flex-basis: 50%;
+            background: lime;
+            border: 5px solid black;
+            flex-grow: 1;
+            flex-shrink: 1;
+            font-size: 32px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-equal">
+        <div class="box-equal">1</div>
+        <div class="box-equal">2</div>
+        <div class="box-equal">3</div>
+        <div class="box-equal">4</div>
+    </div>
+</body>
+</html>

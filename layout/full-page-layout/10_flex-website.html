@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
+
+    <style>
+        *
+        {
+            box-sizing: border-box;
+        }
+        header {
+            background: #3cafe2;
+            padding: 20px;
+        }
+
+        .content {
+            background: #129a22;
+            padding: 20px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            background: #673ab7;
+            padding: 20px;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 300px;
+        }
+
+        footer {
+            background: black;
+            padding: 20px;
+            color: white;
+        }
+
+        .wrapper
+        {
+            margin: auto;
+            max-width: 720px;
+        }
+
+        @media (min-width: 640px){
+            .flex-container {
+                display: flex;
+            }    
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Header</h1>
+        </header>
+
+        <div class="flex-container wrapper">
+    
+            <section class="content">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam quis quia ad accusantium, saepe esse, non neque odio molestiae iusto quae sed magni distinctio maxime ea deserunt voluptas ut provident?
+                Perferendis dolorum corrupti modi consectetur neque. Ducimus sit velit corporis mollitia autem! Facilis amet necessitatibus libero qui distinctio enim cupiditate deleniti sequi dolorem fuga similique, vero nesciunt a veniam consequuntur.
+                Consectetur voluptates veniam officia facilis minima eligendi, dolor libero quaerat unde consequuntur adipisci eaque! Voluptate, nulla nobis, ea architecto laudantium rerum labore, enim vitae blanditiis doloremque consequuntur amet aliquam corporis!
+            </section>
+    
+            <aside class="sidebar">
+                Sidebar
+            </aside>
+
+        </div>
+        
+        <footer>
+            Footer
+        </footer>
+    
+    </main>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body
+        {
+            font-family: Arial;
+        }
+        header {
+            padding: 60px;
+            text-align: center;
+            background: #3cafe2;
+            color: white;
+        }
+        nav {
+            display: flex;
+            background-color: black;
+            flex-direction: column;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .row {   
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .sidebar {
+            flex: 30%;
+            background-color: #f1f1f1;
+            padding: 20px;
+            order: 1;
+        }
+
+        .content {
+            flex: 70%;
+            background: white;
+            padding: 20px;
+            order: 0;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background: black;
+            color: white;
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px){
+            .row, nav {   
+                flex-direction: row;
+            }
+
+            .sidebar
+            {
+                flex-basis: 100%;
+            }
+            .content
+            {
+                flex-basis: 100%;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .row, nav {   
+                flex-direction: row;
+            }
+
+            .sidebar
+            {
+                order: 0;
+            }
+            .content
+            {
+                order: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <h1>Code assassins</h1>
+        <p>Welcome to our website</p>
+    </header>
+  
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Blog</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+  
+  <!-- The flexible grid (content) -->
+  <div class="row">
+    <div class="sidebar">
+      <h2>About Us</h2>
+      <img src="https://picsum.photos/id/237/300/300" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem distinctio recusandae illo ratione nihil facere, veniam blanditiis!</p>
+    </div>
+    <div class="content">
+      <h2>HEADING</h2>
+      <h5>description, January 7th, 2021</h5>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <br>
+      <h2>HEADING</h2>
+      <h5>description, January 6th, 2021</h5>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+        <p>&copy; 2021 by codeAssassins</p>
+  </footer>
+  
+
+</body>
+</html>

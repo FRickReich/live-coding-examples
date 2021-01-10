@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box; 
+        }
+        html, body {
+            height: 100vh;
+        }
+        .container {
+            height: 100vh;
+            flex-direction: column;
+            display: flex;
+        }
+
+        header,
+        footer
+        {
+            background: tomato;
+            height: 50px;
+        }
+
+        #page
+        {
+            flex-direction: column;
+            display: flex;
+            flex: 1;
+        }
+
+        #page > section
+        {
+            flex: 1;
+        }
+
+        #page > nav
+        {
+            order: -1;
+        }
+
+        #page > nav
+        {
+            background: lime;
+            flex-basis: 50px;
+        }
+
+        #page > aside
+        {
+            display: none;
+        }
+
+        header,
+        footer,
+        section,
+        nav,
+        aside
+        {
+            padding: 10px;
+        }
+
+        @media (min-width: 720px)
+        {
+            #page
+            {
+                flex-direction: row;
+            }
+
+            #page > aside,
+            #page > nav
+            {
+                background: lime;
+                flex-grow: 0;
+                flex-shrink: 0;
+                flex-basis: 20vw;
+            }
+
+            #page > aside
+            {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header>Header</header>
+        <div id="page">
+            <section>content</section>
+            <nav>Navigation</nav>
+            <aside>Sidebar</aside>
+        </div>
+        <footer>Footer</footer>
+    </main>
+</body>
+</html>

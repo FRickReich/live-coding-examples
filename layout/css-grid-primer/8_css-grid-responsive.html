@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <style>
+        *
+        {
+            box-sizing: border-box;
+        }     
+        .grid-container {
+            padding: 10px;
+            display: grid;
+            /*  Umbrechen, sobald die Box 250 Pixel Breite hat */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 10px;
+        }
+    
+        .box {
+            background: tomato;
+            border: 5px solid black;
+            padding: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="grid-container">
+        <div class="box">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita facere, consequuntur provident aliquid asperiores explicabo cum sed minima necessitatibus soluta nihil, facilis autem cumque recusandae adipisci excepturi sint, repudiandae sit.
+        </div>
+        <div class="box">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, reprehenderit! Incidunt quas excepturi natus? Vel perspiciatis dignissimos minima facere? Consequatur voluptatem eius dolor nisi, recusandae nostrum hic ratione dolorum natus?
+        </div>
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti tenetur quibusdam ducimus vel numquam libero inventore voluptatem, illum quo soluta accusantium quas animi quam saepe deleniti ipsa amet corporis beatae.
+        </div>
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, deserunt! Quod quo accusantium nesciunt itaque quasi minus, voluptates libero? Odio id asperiores minus corrupti architecto, culpa laboriosam. Molestias, soluta corporis.
+        </div>
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quas at omnis cum, iusto placeat. Nam, ad? Rem commodi atque aperiam! Amet adipisci voluptatem aliquid perferendis quam accusantium nam pariatur?
+        </div>
+    </div>
+
+</body>
+</html>

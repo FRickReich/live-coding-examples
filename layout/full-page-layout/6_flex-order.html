@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <style>
+        *
+        {
+            box-sizing: border-box;
+        }
+        .container
+        {
+            border: 5px solid tomato;
+            display: flex;
+            width: 500px;
+            height: 100px;
+        }
+
+        .box
+        {
+            flex-grow: 1;
+            background: lime;
+            border: 5px solid black;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .boxOne
+        {
+            order: 0;
+        }
+        .boxTwo
+        {
+            order: 1;
+        }
+        .boxThree
+        {
+            order: 2;
+        }
+        .boxFour
+        {
+            order: 3;
+        }
+        .boxFive
+        {
+            order: 4;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box boxOne">1 (0)</div>
+        <div class="box boxTwo">2 (1)</div>
+        <div class="box boxThree">3 (2)</div>
+        <div class="box boxFour">4 (3)</div>
+        <div class="box boxFive">5 (4)</div>
+    </div>
+</body>
+</html>

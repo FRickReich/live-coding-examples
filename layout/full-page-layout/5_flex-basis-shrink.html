@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <style>
+        *
+        {
+            box-sizing: border-box;
+        }
+        .container
+        {
+            border: 5px solid tomato;
+            display: flex;
+            width: 450px;
+            height: 100px;
+        }
+
+        .box
+        {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 100px;
+            background: lime;
+            border: 5px solid black;
+        }
+
+        .shrink-box
+        { 
+            flex-shrink: 1;
+        }
+
+        .shrink-box-2
+        {
+            flex-shrink: 5;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box shrink-box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <div class="container">
+        <div class="box shrink-box"></div>
+        <div class="box shrink-box-2"></div>
+        <div class="box shrink-box"></div>
+        <div class="box shrink-box"></div>
+        <div class="box shrink-box"></div>
+    </div>
+
+</body>
+</html>

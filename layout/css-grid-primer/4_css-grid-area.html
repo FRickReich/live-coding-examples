@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <style>
+        *
+        {
+            box-sizing: border-box;
+        }
+
+        .grid-container
+        {
+            display: grid;
+            /* grid-template-columns: auto auto auto auto auto; */
+            grid-template-columns: repeat(5, auto);
+            /* grid-template-columns: repeat(5, minmax(200px, 1fr)); */
+            grid-gap: 10px;
+            height: 100vh;
+            padding: 10px;
+            background: lime;
+        }
+
+        .grid-item
+        {
+            background: tomato;
+            padding: 10px;
+            text-align: center;
+            border: 5px solid black;
+        }
+
+        .biggerBox
+        {
+            /* auf der 2 linie horizontal, auf der 3 linie vertikal 
+            &
+            auf der 4 linie horizontal, der 5 linie vertikal */
+            grid-area: 2 / 3 / 4 / 5   
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item biggerBox">8</div>
+        <div class="grid-item">9</div>
+        <div class="grid-item">10</div>
+        <div class="grid-item">11</div>
+        <div class="grid-item">12</div>
+    </div>
+  
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <style>
+        *
+        {
+            box-sizing: border-box;
+        }
+        .container
+        {
+            border: 5px solid tomato;
+            display: flex;
+            min-height: 200px;
+        }
+        .box
+        {
+            background: lime;
+            border: 5px solid black;
+            font-size: 32px;
+            flex-grow: 0;
+            text-align: center;
+        }
+
+        .flex-grow-0
+        {
+            flex-grow: 0;
+        }
+
+        .flex-grow-1
+        {
+            flex-grow: 1;
+        }
+
+        .flex-grow-2
+        {
+            flex-grow: 2;
+        }
+
+        .flex-grow-3
+        {
+            flex-grow: 3;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box flex-grow-0">Child</div>
+        <div class="box flex-grow-0">Child</div>
+        <div class="box flex-grow-0">Child</div>
+        <div class="box flex-grow-0">Child</div>
+    </div>
+
+    <div class="container">
+        <div class="box flex-grow-0">Child</div>
+        <div class="box flex-grow-1">Child</div>
+        <div class="box flex-grow-0">Child</div>
+        <div class="box flex-grow-0">Child</div>
+    </div>
+      
+    <div class="container">
+        <div class="box flex-grow-1">Child</div>
+        <div class="box flex-grow-1">Child</div>
+        <div class="box flex-grow-1">Child</div>
+        <div class="box flex-grow-1">Child</div>
+    </div>
+
+    <div class="container">
+        <div class="box flex-grow-1">Child</div>
+        <div class="box flex-grow-1">Child</div>
+        <div class="box flex-grow-2">Child</div>
+        <div class="box flex-grow-1">Child</div>
+    </div>
+
+    <div class="container">
+        <div class="box flex-grow-1">Child</div>
+        <div class="box flex-grow-3">Child</div>
+        <div class="box flex-grow-1">Child</div>
+        <div class="box flex-grow-1">Child</div>
+    </div>
+
+    <div class="container">
+        <div class="box flex-grow-1">Child</div>
+        <div class="box flex-grow-2">Child</div>
+        <div class="box flex-grow-2">Child</div>
+        <div class="box flex-grow-1">Child</div>
+    </div>
+</body>
+</html>
