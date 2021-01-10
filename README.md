@@ -1,2 +1,2 @@
 # live-coding-examples
-An assortment of live coding examples for class FbW47-2
+Eine Ansammlung von Live-Coding Beispielen für Klasse FbW47-2.
