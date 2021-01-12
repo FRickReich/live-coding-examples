@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        div{
+            margin: 0 auto 10px;
+            background: tomato;
+        }
+
+        .square
+        {
+            width: 100px;
+            height: 100px;
+        }
+
+        .circle
+        {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }        
+
+        .parallelogram
+        {
+            height: 100px;
+            width: 100px;
+            transform: skew(-25deg);
+        }
+        
+        .ring
+        {
+            background: none;
+            width: 100px;
+            height: 100px;
+            border: 10px solid tomato;
+            border-radius: 50%;
+        }
+
+        .trapezoid
+        {
+            border-bottom: 100px solid tomato;
+	        border-left: 25px solid transparent;
+	        border-right: 25px solid transparent;
+            background: transparent;
+	        height: 0;
+	        width: 100px;
+        }
+        
+        .corner
+        {
+            width: 0;
+            height: 0;
+            background: none;
+            border-bottom: 100px solid tomato;
+            border-left: 100px solid transparent;
+        }
+
+        .quad
+        {
+            width: 0;
+            height: 0;
+            border-top: 50px solid tomato;
+            border-right: 50px solid lime;
+            border-bottom: 50px solid purple;
+            border-left: 50px solid cyan;
+        }
+
+
+        .up,
+        .down,
+        .left,
+        .right
+        {
+            width: 0;
+            height: 0;
+            background: transparent;
+        }
+
+        .up
+        {
+            border-left: 75px solid transparent;
+	        border-right: 75px solid transparent;
+	        border-bottom: 100px solid tomato;
+        }
+
+        .down
+        {
+            border-left: 75px solid transparent;
+	        border-right: 75px solid transparent;
+            border-top: 100px solid tomato;
+        }
+
+        .left
+        {
+            border-top: 75px solid transparent;
+	        border-bottom: 75px solid transparent;
+	        border-right: 100px solid tomato;
+        }
+
+        .right
+        {
+            border-top: 75px solid transparent;
+	        border-bottom: 75px solid transparent;
+	        border-left: 100px solid tomato;
+        }
+        
+        .pacman {
+            margin-top: 10px;
+            width: 0px;
+            height: 0px;
+            background: none;
+            border-right: 60px solid transparent;
+            border-top: 60px solid tomato;
+            border-left: 60px solid tomato;
+            border-bottom: 60px solid tomato;
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="square"></div>
+    <div class="circle"></div>
+    <div class="parallelogram"></div>
+    <div class="ring"></div>
+    <div class="trapezoid"></div>
+    <div class="corner"></div>
+    <div class="quad"></div>
+    <div class="up"></div>
+    <div class="down"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="pacman"></div>
+
+</body>
+</html>

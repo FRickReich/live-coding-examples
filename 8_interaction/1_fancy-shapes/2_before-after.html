@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div
+        {
+            margin: 0 auto 10px;
+        }
+
+        .heart
+        {
+            margin-top: 100px;
+            background-color: tomato;
+            height: 100px;
+            width: 100px;
+            transform: rotate(-45deg);
+        }
+        .heart::before,
+        .heart::after
+        {
+            content: '';
+            background-color: tomato;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .heart::before
+        {
+            top: -50px;
+        }
+        .heart::after
+        {
+            left: 50px;
+        }
+
+        .diamond {
+            margin-top: 50px;
+            width: 100px;
+            height: 0;
+            border-right: 50px solid transparent;
+            border-bottom: 40px solid tomato;
+            border-left: 50px solid transparent;
+        }
+        .diamond:after {
+            content: "";
+            position: absolute;
+            border-top: 150px solid tomato;
+            border-right: 100px solid transparent;
+            border-left: 100px solid transparent;
+            transform: translateX(-50px) translateY(40px);
+        }
+
+        .letterA{
+            margin: 160px auto 10px;
+            position: relative;
+            width: 60px;
+            height: 90px;
+            border-bottom: solid 14px tomato;
+        }
+        .letterA:before{
+            content:'';
+            transform:skew(-20deg);
+            position: absolute;
+            top: 10px;
+            left:0;
+            width:15px;
+            height: 120px;
+            background: tomato;
+        }
+        .letterA:after{
+            transform:skew(20deg);
+            position:absolute;
+            content:'';
+            top: 10px;
+            left:45px;
+            width:15px;
+            height: 120px;
+            background: tomato;
+        }
+ 
+        .bubble {
+            margin: 60px auto;
+            position: relative;
+            width: 250px;
+            height: 120px;
+            text-align: center;
+            color: #fff;
+            background: tomato;
+            border-radius: 50%;
+        }
+        .bubble::before,
+        .bubble::after {
+            content: "";
+            position: absolute;
+            bottom: -30px;
+            left: 50px;
+            width: 30px;
+            height: 30px;
+            background: tomato;
+            border-radius: 50%;
+        }
+        .bubble::after {
+            bottom: -40px;
+            left: 30px;
+            width: 15px;
+            height: 15px;
+        }
+
+        .hexagon
+        {
+            width: 100px;
+            height: 70px;
+            background: tomato;
+            margin: 100px auto;
+            position: relative;
+        }
+        .hexagon::before,
+        .hexagon::after
+        {
+            content: '';
+            width: 0;
+            height: 0;
+            background: none;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 25px solid tomato;
+            position: absolute;
+        }
+        .hexagon::before
+        {
+            top: -25px;
+        }
+        .hexagon::after
+        {
+            border-bottom: none;
+            border-top: 25px solid tomato;
+            bottom: -25px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="heart"></div>
+    <div class="diamond"></div>
+    <div class="ring"></div>
+    <div class="letterA"></div>
+    <div class="bubble"></div>
+    <div class="hexagon"></div>
+
+</body>
+</html>
