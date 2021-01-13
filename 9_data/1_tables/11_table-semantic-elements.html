@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .table-container
+        {
+            /* <table> */
+            display: table;
+        }
+        .table-container .table-header,
+        .table-container .table-row
+        {
+            /* <tr> */
+            display: table-row;
+        }
+        .table-container .table-header > .table-data,
+        .table-container .table-row > .table-data
+        {
+            /* td */
+            display: table-cell;
+            padding: 10px;
+        }
+        .table-container .table-header > .table-data
+        {
+            font-weight: bold;
+        }
+        .table-container .table-row:nth-child(even)
+        {
+            background: lightgray;
+        }
+        .table-container .table-row:nth-child(odd)
+        {
+            background: darkgray;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="table-container">
+        <header class="table-header">
+            <div class="table-data">First Name</div>
+            <div class="table-data">Last Name</div>
+            <div class="table-data">Phone</div>
+        </header>
+        <section class="table-row">
+            <div class="table-data">Max</div>
+            <div class="table-data">Mustermann</div>
+            <div class="table-data">12345-67890</div>
+        </section>
+        <section class="table-row">
+            <div class="table-data">James</div>
+            <div class="table-data">Bond</div>
+            <div class="table-data">98765-43210</div>
+        </section>
+    </main>
+
+</body>
+</html>
