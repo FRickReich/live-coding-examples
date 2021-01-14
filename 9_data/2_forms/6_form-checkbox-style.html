@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .normalCheckBox
+        {
+            background: red;
+            outline: 2px solid black;
+            border: 2px solid black;
+        }
+
+        .checkBox
+        {
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            line-height: 30px;
+        }
+        .checkBox input
+        {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .checkBox .checkMark
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background: tomato;
+        }
+        .checkBox input:checked ~ .checkMark {
+            background-color: lime;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="checkbox" name="checkBox" id="normalCheckBox">
+
+    <br>
+    <br>
+
+    <label class="checkBox">One
+        <input type="checkbox" checked>
+        <span class="checkMark"></span>
+    </label>
+    <label class="checkBox">Two
+        <input type="checkbox">
+        <span class="checkMark"></span>
+    </label>
+    <label class="checkBox">Three
+        <input type="checkbox">
+        <span class="checkMark"></span>
+    </label>
+    <label class="checkBox">Four
+        <input type="checkbox">
+        <span class="checkMark"></span>
+    </label>
+
+</body>
+</html>

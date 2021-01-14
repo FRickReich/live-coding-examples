@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input
+        {
+            margin-bottom: 10px;
+        }
+        input[type=text]
+        {
+            outline: 1px solid black;
+            border: none;
+        }
+        input[type=text]:focus
+        {
+            background: tomato;
+        }
+
+        input[type=text]:disabled
+        {
+            background: grey;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="">
+
+        <input type="text" name="textInput" id="textInput">
+        <br>
+        <input type="password" name="textInput" id="textInput">
+        <br>
+        <input type="text" value="text" disabled>
+        <br>
+        <input type="text" value="text" readonly>
+        <br>
+
+    </form>
+    
+</body>
+</html>

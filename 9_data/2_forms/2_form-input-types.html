@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input,
+        textarea
+        {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="">
+        <label for="name">Text</label>
+        <input type="text" value="name" placeholder="Text" minlength="15">
+        
+        <label for="password">Password</label>
+        <input type="password" name="password" value="" placeholder="Password">
+
+        <label for="email">Email</label>
+        <input type="email" name="email">
+
+        <label for="number">Number</label>
+        <input type="number" name="number" min="2" max="25">
+        
+        <label for="textarea">Textarea</label>
+        <textarea name="textarea" cols="30" rows="10">Hello world!</textarea>
+
+        <label for="range">Range</label>
+        <input type="range" name="range" value="75" step="25">
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="reset">
+        <input type="button" onclick="alert('Hello World!')"  value="click">
+    </form>
+
+</body>
+</html>
