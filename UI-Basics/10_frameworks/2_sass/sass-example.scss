@@ -1,0 +1,16 @@
+.box
+{
+    background: tomato;
+    width: 500px;
+    height: 200px;
+
+    &:hover
+    {
+        color: yellow;
+    }
+
+    .content
+    {
+        background: lime;
+    }
+}

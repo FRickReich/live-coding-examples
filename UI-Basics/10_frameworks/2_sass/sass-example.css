@@ -1,0 +1,14 @@
+.box {
+  background: tomato;
+  width: 500px;
+  height: 200px;
+}
+
+.box:hover {
+  color: yellow;
+}
+
+.box .content {
+  background: lime;
+}
+/*# sourceMappingURL=sass-example.css.map */
