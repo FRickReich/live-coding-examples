@@ -36,3 +36,5 @@ const testValue = 5;
     {
         console.log('today is some other day');
     }
+
+    // || und && nicht gergessen!

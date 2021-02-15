@@ -11,7 +11,7 @@ switch(testValue) {
         console.log("testValue ist 2");
         break;
     default:
-      console.log("testValue hat einen anderen wert");
+        console.log("testValue hat einen anderen wert");
 }
 
 // Switches vergleichen strict, mit ===
