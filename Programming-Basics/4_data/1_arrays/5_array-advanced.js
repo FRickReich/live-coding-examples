@@ -175,6 +175,14 @@ console.log("some: " + someCheck);
 
 console.log("=".repeat(50));
 
+/**
+ * @method .sort();
+ * @description
+ * Die Methode .sort(); sortiert eine Array in positiver oder negativer reihenfolge.
+ * @example
+ * [ array ].sort(callback(wert1, wert2)
+ * @returns { array }
+ */
 // .sort(); sortiert eine array in positiver oder negativer reihenfolge:
 let numberArray = [ 1, 3, 2, 6, 4, 5 ];
 
