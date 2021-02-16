@@ -121,6 +121,76 @@ console.log(newDrinkList);
 
 console.log("=".repeat(50));
 
+// https://wiki.selfhtml.org/wiki/JavaScript/Objekte/Array/reduce
+// https://www.freecodecamp.org/news/reduce-f47a7da511a9/
+/**
+ * @method .reduce();
+ * @description
+ * Die Methode .reduce(); reduziert die inhalte der Array auf einen einzigen wert, 
+ * indem es zwei elemente (von links nach rechts) durch eine funktion vergleicht und reduziert
+ * um zum beispiel die Summe oder den Durchschnitt von Werten in der Array zu finden.
+ * @example
+ * [ array ].reduce(callback(Wert1, Wert2) {});
+ * @example
+ * [ array ].reduce(callback(Wert1, Wert2) {}, InitialWert);
+ */
+const someNumbersArray = [ 12, 22, 8, 6, 7 ];
+
+const sumOfSomeNumbers = someNumbersArray.reduce((firstValue, secondValue) => firstValue + secondValue);
+/*
+ *
+ * const sumOfSomeNumbers = someNumbersArray.reduce(function(firstValue, secondValue)
+ * { 
+ *    return firstValue + secondValue;
+ * });
+ */
+
+console.log(sumOfSomeNumbers);
+
+/**
+ * Logik:
+ * | Iteration | Variablen                         | Aktion                   | Ergebnis |
+ * |-----------|-----------------------------------|--------------------------|----------|
+ * | 1         | firstValue = 12, secondValue = 22 | firstValue + secondValue | 34       |
+ * | 2         | firstValue = 34, secondValue = 8  | firstValue + secondValue | 42       |
+ * | 3         | firstValue = 42, secondValue = 6  | firstValue + secondValue | 48       |
+ * | 4         | firstValue = 48, secondValue = 7  | firstValue + secondValue | 55       |
+ */
+
+/**
+ * Find Max Number Example
+ */
+const arrayOfNumbers = [ 5, -2, 8, 7, 11, -6 ];
+
+const highestNumber = arrayOfNumbers.reduce((firstValue, secondValue) =>
+{
+    if(firstValue > secondValue)
+    {
+        return firstValue;
+    }
+    else
+    {
+        return secondValue;
+    }
+});
+
+/**
+ * Logik:
+ * [ 5, -2, 8, 7, 11, -6 ];
+ * 
+ * | Iteration | Variablen                         | Aktion                   | Ergebnis |
+ * |-----------|-----------------------------------|--------------------------|----------|
+ * | 1         | firstValue = 5, secondValue = -2  | firstValue > secondValue | 5        |
+ * | 2         | firstValue = 5, secondValue = 8   | firstValue > secondValue | 8        |
+ * | 3         | firstValue = 8, secondValue = 7   | firstValue > secondValue | 8        |
+ * | 4         | firstValue = 8, secondValue = 11  | firstValue > secondValue | 11       |
+ * | 5         | firstValue = 11, secondValue = -6 | firstValue > secondValue | 11       |
+ */
+
+console.log(highestNumber);
+
+console.log("=".repeat(50));
+
 /**
  * @method .find();
  * @description
