@@ -160,7 +160,7 @@ console.log(sumOfSomeNumbers);
 /**
  * Find Max Number Example
  */
-const arrayOfNumbers = [ 5, -2, 8, 7, 11, -6 ];
+const arrayOfNumbers = [ 5, 8, 7, 11, -6 ];
 
 const highestNumber = arrayOfNumbers.reduce((firstValue, secondValue) =>
 {
@@ -172,19 +172,18 @@ const highestNumber = arrayOfNumbers.reduce((firstValue, secondValue) =>
     {
         return secondValue;
     }
-});
+}, 4);
 
 /**
  * Logik:
- * [ 5, -2, 8, 7, 11, -6 ];
  * 
  * | Iteration | Variablen                         | Aktion                   | Ergebnis |
  * |-----------|-----------------------------------|--------------------------|----------|
- * | 1         | firstValue = 5, secondValue = -2  | firstValue > secondValue | 5        |
- * | 2         | firstValue = 5, secondValue = 8   | firstValue > secondValue | 8        |
- * | 3         | firstValue = 8, secondValue = 7   | firstValue > secondValue | 8        |
- * | 4         | firstValue = 8, secondValue = 11  | firstValue > secondValue | 11       |
- * | 5         | firstValue = 11, secondValue = -6 | firstValue > secondValue | 11       |
+ * | 1         | firstValue = 4, secondValue = 5   | firstValue > secondValue | 5        |
+ * | 3         | firstValue = 5, secondValue = 8   | firstValue > secondValue | 8        |
+ * | 4         | firstValue = 8, secondValue = 7   | firstValue > secondValue | 8        |
+ * | 5         | firstValue = 8, secondValue = 11  | firstValue > secondValue | 11       |
+ * | 6         | firstValue = 11, secondValue = -6 | firstValue > secondValue | 11       |
  */
 
 console.log(highestNumber);
