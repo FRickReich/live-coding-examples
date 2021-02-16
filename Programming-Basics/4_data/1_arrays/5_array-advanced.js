@@ -1,3 +1,8 @@
+const divider = (methodName) => {
+    console.log("\n"+ "=".repeat(25) + " ." + methodName + "(); " + "=".repeat(25));
+}
+
+divider("concat");
 
 /**
  * @method .concat();
@@ -14,9 +19,10 @@ const arrayTwo = [ 1, 2, 3 ];
 const arrayThree = [ true, true, false ];
 
 const arrayComplete = arrayOne.concat(arrayTwo, arrayThree);
+console.log("arrayOne[], arrayTwo[] und arrayThree[] zusammengefügt:")
 console.log(arrayComplete);
 
-console.log("=".repeat(50));
+divider("indexOf");
 
 /**
  * @method .indexOf();
@@ -33,17 +39,17 @@ const colors = [ "red", "green", "orange", "blue", "yellow", "pink" ];
 
 // wir suchen die farbe grün um herauszufinden wo sie sich befindet.
 const findColor1 = colors.indexOf("green");
-console.log(findColor1);
+console.log("position von green: " + findColor1);
 
 // wir suchen die farbe purple
 const findColor2 = colors.indexOf("purple");
-console.log(findColor2);
+console.log("position von purple: " + findColor2);
 
 // wir suchen die farbe "blue" und fangen mit der suche bei position 3 an.
-const findColor3 = colors.indexOf("blue", 4); // weniger als 4 - als test;
-console.log(findColor3);
+const findColor3 = colors.indexOf("blue", 3); // mehr als 4 - als test;
+console.log("position von blue: " + findColor3);
 
-console.log("=".repeat(50));
+divider("includes");
 
 /**
  * @method .includes();
@@ -56,12 +62,12 @@ console.log("=".repeat(50));
  * @returns { boolean }
  */
 // wir wollen wissen ob die farbe Grün in der array vorhanden ist
-console.log("found green: " + colors.includes("green"));
+console.log("grün gefunden: " + colors.includes("green"));
 
 // wir wollen wissen ob die farbe purple in der array vorhanden ist.
-console.log("found purple: " + colors.includes("purple"));
+console.log("purple gefunden: " + colors.includes("purple"));
 
-console.log("=".repeat(50));
+divider("map");
 
 /**
  * @method .map();
@@ -83,10 +89,8 @@ const newNumberList = numbers.map(number =>
 });
 // arrow function: newNumberList = numbers.map(number => number * 2);
 
+console.log("jeder wert in numbers[] multipliziert mit 2:");
 console.log(newNumberList);
-
-console.log("=".repeat(50));
-
 
 /**
  * Warum nutzen wir map anstelle von foreach?
@@ -98,6 +102,8 @@ const newNumbers2 = numbers.forEach(number =>
     return number * 2;
 });
 console.log(newNumbers2);
+
+divider("filter");
 
 /**
  * @method .filter();
@@ -117,9 +123,10 @@ const newDrinkList = drinks.filter(drink =>
     return drink[0] === "w";
 });
 
+console.log("elemente in drinks[] die mit w anfangen:");
 console.log(newDrinkList);
 
-console.log("=".repeat(50));
+divider("reduce");
 
 // https://wiki.selfhtml.org/wiki/JavaScript/Objekte/Array/reduce
 // https://www.freecodecamp.org/news/reduce-f47a7da511a9/
@@ -145,7 +152,7 @@ const sumOfSomeNumbers = someNumbersArray.reduce((firstValue, secondValue) => fi
  * });
  */
 
-console.log(sumOfSomeNumbers);
+console.log("summe aller zahlen in someNumbersArray[]: " + sumOfSomeNumbers);
 
 /**
  * Logik:
@@ -186,9 +193,9 @@ const highestNumber = arrayOfNumbers.reduce((firstValue, secondValue) =>
  * | 6         | firstValue = 11, secondValue = -6 | firstValue > secondValue | 11       |
  */
 
-console.log(highestNumber);
+console.log("höchste Zahl in highestNumber[]: " + highestNumber);
 
-console.log("=".repeat(50));
+divider("find");
 
 /**
  * @method .find();
@@ -206,9 +213,9 @@ const findLanguage = languages.find(language =>
     return language === "Spanish";
 });
 
-console.log(findLanguage);
+console.log("gesuchte sprache gefunden in languages[]: " + findLanguage);
 
-console.log("=".repeat(50));
+divider("every");
 
 /**
  * @method .every();
@@ -226,6 +233,10 @@ const everyCheck = numbersList.every(number =>
     return number > 0;
 });
 
+console.log("jeder wert in numbersList[] ist größer als 0: " + everyCheck);
+
+divider("some");
+
 /**
  * @method .some();
  * @description 
@@ -239,10 +250,9 @@ const someCheck = numbersList.some(number =>
     return number > 0;
 });
 
-console.log("every: " + everyCheck);
-console.log("some: " + someCheck);
+console.log("ein oder mehrere Werte in numbersList[] sind größer als 0: " + someCheck);
 
-console.log("=".repeat(50));
+divider("sort");
 
 /**
  * @method .sort();
@@ -261,6 +271,7 @@ const ascendingArray = numberArray.sort((a, b) =>
     return a > b ? 1 : -1;
 });
 
+console.log("numberArray[] aufsteigend sortiert:");
 console.log(ascendingArray);
 
 // In absteigender reihenfolge sortieren
@@ -270,4 +281,5 @@ const descendingArray = numberArray.sort((a, b) =>
 });
 // const descendingArray = num.sort( (a, b) => a > b ? -1 : 1 );
 
+console.log("numberArray[] absteigend sortiert:");
 console.log(descendingArray);
