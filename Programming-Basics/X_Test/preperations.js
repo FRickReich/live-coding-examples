@@ -2,7 +2,7 @@
 
 const divider = (inputString) => 
 {
-    console.log(`\n${"=".repeat(25)} ${inputString} ${"=".repeat(25)}`);
+    console.log(`\n${ "=".repeat(25) } ${ inputString } ${ "=".repeat(25) }`);
 }
 
 const stringArray = [ "A", "B", "C" ];
@@ -104,3 +104,47 @@ for (let i of testArray)
 {
    console.log(i);
 }
+
+
+// Arrow functions
+
+divider("arrow function");
+
+/**
+ * arrow-function
+ * @see https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen
+ * @description
+ * Eine arrow-function ist eine kompakte version der function.
+ * bei einem einzelnen befehl ist kein block-körper oder return befehl nötig.
+ * @example
+ * const functionName = wert => return wert;
+ * @example 
+ * const functionName = wert => wert;
+ * @example
+ * const functionName = (wert1, wert2, ...) => {};
+ * @example
+ * // anonyme funktion:
+ * wert => {};
+ */
+const returnFunction1 = () => "Hier brauchen wir kein return!";
+console.log(returnFunction1());
+
+const returnFunction2 = () => { return "Hier brauchen wir ein return!"; }
+// const returnFunction2 = () => { "Hier brauchen wir ein return!"; }
+console.log(returnFunction2());
+
+const arrowFunction = () => console.log("Hello World!");
+arrowFunction();
+
+const helloString = inputString => console.log(`Hello ${ inputString }`);
+
+helloString("Sven");
+
+const repeater = (inputString, inputNumber) => 
+{
+    console.log(inputString.repeat(inputNumber));
+}
+repeater("Test", 5);
+
+const addFunction = (firstValue, secondValue) => firstValue + secondValue;
+console.log(addFunction(2, 5));
