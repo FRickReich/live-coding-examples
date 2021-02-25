@@ -243,7 +243,7 @@ divider("some");
  * Die Methode .some(); ist das gegenteil von .every(); und gibt true zurück, sobald ein wert positiv ist.
  * @example
  * [ array ].some(callback(Wert))
- * @returns { boolean }
+ * @returns { boolean }const 
  */
 const someCheck = numbersList.some(number =>
 { 
