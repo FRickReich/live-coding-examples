@@ -1,9 +1,12 @@
 // https://nemisj.com/why-getterssetters-is-a-bad-idea-in-javascript/
 // https://javascript.info/property-accessors
 class User {
+    #firstName;
+    #lastName;
+    
     constructor(firstName, lastName) {
-      this._firstName = firstName;
-      this._lastName = lastName;
+      this.#firstName = firstName;
+      this.#lastName = lastName;
     }
   
     // um auf unsere werte zuzugreifen, können wir in javascript zwar einfach auf die werte zugreifen, aber sauberer ist es methoden fürs editieren, und anzeigen von werten zu schreiben. JavaScript besitzt auch sogenannte "getter/setter", diese sind aber nicht wirklich nützlich ohne typescript.
@@ -11,25 +14,25 @@ class User {
     // Vornamen ausgeben
     get firstName()
     {
-        return this._firstName;
+        return this.#firstName;
     }
 
     // Vornamen definieren
     set firstName(firstName)
     {
-        this._firstName = firstName;
+        this.#firstName = firstName;
     }
 
     // Vorname ausgeben
     getFirstName()
     {
-        return this._firstName;
+        return this.#firstName;
     }
 
     // Vorname definieren
     setFirstName(firstName)
     {
-        this._firstName = firstName;
+        this.#firstName = firstName;
     }
   }
 
