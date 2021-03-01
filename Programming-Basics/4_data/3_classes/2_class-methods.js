@@ -7,8 +7,9 @@ class User {
     constructor(firstName, lastName) {
       this.#firstName = firstName;
       this.#lastName = lastName;
+      
+      this.fullName = this.#createFullName();
     }
-  
     // um auf unsere werte zuzugreifen, können wir in javascript zwar einfach auf die werte zugreifen, aber sauberer ist es methoden fürs editieren, und anzeigen von werten zu schreiben. JavaScript besitzt auch sogenannte "getter/setter", diese sind aber nicht wirklich nützlich ohne typescript.
 
     // Vornamen ausgeben
@@ -33,6 +34,11 @@ class User {
     setFirstName(firstName)
     {
         this.#firstName = firstName;
+    }
+
+    #createFullName()
+    {
+        return this.#firstName + " " + this.#lastName;
     }
   }
 
