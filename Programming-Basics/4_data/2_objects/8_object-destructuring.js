@@ -15,6 +15,7 @@ const rgb = [ "255", "128", "200" ];
 
 // Wir erstellen auf der linken seite eine array mit variablen, und holen uns die werte aus der anderen array heraus.
 const [ red, green, blue ] = rgb;
+
 console.log("red:", red);
 console.log("green:", green);
 console.log("blue:", blue);
