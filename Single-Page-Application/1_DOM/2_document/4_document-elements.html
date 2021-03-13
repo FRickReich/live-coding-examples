@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="container">
+
+        <ul class="list"></ul>
+    </div>
+
+
+    <script>
+        const containerElement = document.querySelector("#container");
+        const listElement = document.querySelector(".list");
+
+        /**
+         * Document.createElement();
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+         * Die methode Document.createElement(); erstellt ein HTML-element objekt.
+         * @params { string } tagName - der typenname des elements (div, p, a, li, usw).
+         * @params { object } options - erweiterte konfigurationen für das element.
+         * @returns { object }
+         */
+        const headerElement = document.createElement("h1"); // <h1></h1>
+        headerElement.innerText = "Überschrift"; // <h1>Überschrift</h1>
+        console.log(headerElement); // beweis für ^
+
+        /**
+         * ParentNode.prepend();
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend
+         * Die methode ParentNode.prepend(); fügt das aktuelle element dem elternelement hinzu und plaziert es am anfang des elternelements.
+         * @params { object } node - das hinzuzufügende element.
+         */
+
+        containerElement.prepend(headerElement); // <div id="container"><h1>Überschrift</h1></div>
+        console.log(containerElement); // beweis für ^
+
+        /**
+         * ParentNode.append();
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append
+         * Die methode ParentNode.append(); fügt das aktuelle element dem elternelement hinzu und plaziert es am ende des elternElements.
+         * @params { object } node - das hinzuzufügende element.
+         */
+
+        // Wir erstellen ein footer element
+        const footerElement = document.createElement("footer"); // <footer></footer>
+        footerElement.innerText = "Hier ist der Footer"; // <footer>Dies ist der Footer</footer>
+        console.log(footerElement); // beweis für ^
+
+        // Und fügen es dem container hinzu.
+        containerElement.append(footerElement); // <div id="container">...<footer>Dies ist der Footer</footer</div>
+        console.log(containerElement); // beweis für ^
+
+        // Mit einem loop fügen wir unserer liste ein paar elemente hinzu.
+        const listEntries = [
+            "Erster Eintrag",
+            "Zweiter Eintrag",
+            "Dritter Eintrag"
+        ]
+
+        for(entry of listEntries)
+        {
+            const listEntry = document.createElement("li");
+            listEntry.innerText = entry;
+            listElement.append(listEntry);
+        }
+
+        /**
+         * ParentNode.children();
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children 
+         * Diese methode gibt uns eine liste mit den kind-elementen eines elements zurück.
+         * @returns { Array }
+         */
+        console.log("Alle einträge:", listElement.children);
+        console.log("Spezifischer eintrag:", listElement.children[1]);
+
+        /**
+         * ParentNode.firstElementChild();
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild
+         * Diese methode gibt uns das erste kind-element eines elements zurück.
+         * @returns { object }
+         */
+        console.log("Erster eintrag:", listElement.firstElementChild);
+
+        /**
+         * ParentNode.lastElementChild();
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild
+         * Diese methode gibt uns das letzte kind-element eines elements zurück.
+         * @returns { object }
+         */
+        console.log("Letzter eintrag:", listElement.lastElementChild);
+
+        /**
+         * ParentNode.childElementCount();
+         * Die methode ParentNode.childElementCount(); gibt die anzahl an kind-elementen eines elements zurück.
+         * @returns { number }
+         */
+
+        const listLength = listElement.childElementCount;
+        console.log("anzahl der einträge:", listLength);
+    </script>
+
+</body>
+</html>

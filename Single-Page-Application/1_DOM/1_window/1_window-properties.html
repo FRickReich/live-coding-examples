@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /**
+         * Window;
+         * Das window Objekt repräsentiert das Browserfenster, dass das Document-Object-Model enthält.
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Window
+         */
+        console.log("window:", window);
+
+        /**
+         * Window.innerWidth; & window.innerHeight;
+         * Die properties .innerWidth; und .innerHeight; geben die höhe und breite des browserfenstersc, inklusive der scrollbar in pixeln zurück.
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth
+         * @returns { number }
+         */
+        console.log("Browserfenster breite:", window.innerWidth);
+        console.log("Browserfenster höhe:", window.innerHeight);
+        
+        /**
+         * Window.outerWidth; & window.outerHeight;
+         * Die properties .outerHeight; und .outerWidth; geben die höhe und breite des ganzen browsers an.
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/outerWidth
+         * @returns { number }
+         */
+         console.log("Browser breite:", window.outerWidth);
+        console.log("Browser höhe:", window.outerHeight);
+
+        /**
+         * Window.location;
+         * Die property .location; gibt uns ein objekt zurück, in dem wir daten zum aktuellen pfad im browser zurück
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/location
+         * @returns { object }
+         */
+        console.log("window.location:", window.location); // das ganze objekt mit informationen zum host, pfad, port, usw
+        console.log("window.location.host:", window.location.host); // die hostadresse unseres web-servers
+        console.log("window.location.pathname:", window.location.pathname); // der pfad zu unserer offenen datei im browser.
+    </script>
+
+    <style>
+        body
+        {
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

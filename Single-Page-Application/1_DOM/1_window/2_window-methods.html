@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        /**
+         * window.alert();
+         * Die methode window.alert(); zeigt ein dialogfenster mit einem OK button im browser an.
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
+         * @param { string } message - Die angezeigte nachricht
+         */
+        window.alert("Hallo Welt!");
+        // auch alert(...);, ohne window davor.
+
+        /**
+         * Window.confirm();
+         * window.confirm(); zeigt ein dialogfenster mit einem ok und einem cancel button im browser an.
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm
+         * @param { string } message - Der text, der im Dialogfenster angezeigt wird.
+         * @returns { boolean } true für ok, false für cancel.
+         */
+        const resultat = window.confirm("Wollen sie dieses dialogfenster sehen?");
+        // auch confirm(...);, ohne window davor.
+
+        console.log("resultat von window.confirm();:", resultat);
+
+        /**
+         * Window.prompt();
+         * window.prompt(); zeigt ein dialogfenster mit optionalem platzhalter an.
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt
+         * @param { string } message - Der text, der im Dialogfenster angezeigt wird.
+         * @param { string } default - Ein platzhalter text, der in der texteingabe angezeigt wird.
+         * @returns { string } Der eingegebene Text.
+         */
+        const eingabe = window.prompt("Hallo, wie geht es dir?", "ganz gut...");
+        // auch prompt(...);, ohne window davor.
+
+        console.log("resultat von window.prompt();:", eingabe);
+
+        /**
+         * Window.print();
+         * Die methode window.print(); Öffnet das druckerfenster des browsers.
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/print
+         */
+        window.print();
+    </script>
+
+    <style>
+        body
+        {
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

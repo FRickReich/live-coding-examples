@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .active
+        {
+            color: tomato;
+        }
+        
+        #page
+        {
+            background: cyan;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2 id="title">Seitentitel</h2>
+
+        <h4 id="subtitle">Untertitel <span></span></h4>
+
+        <p class="lorem">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, quia laborum laudantium libero veniam debitis delectus sunt suscipit, perferendis minus necessitatibus. Cupiditate autem temporibus est et iusto iste fuga eveniet.
+        </p>
+
+        <p class="lorem">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita nisi iste dicta provident quisquam laboriosam perferendis. Consectetur mollitia odio commodi suscipit laboriosam ipsam impedit beatae tempora molestiae, rem necessitatibus ut.
+        </p>
+
+        <ul id="list">
+            <li class="item">1. Erster Eintrag</li>
+            <li class="item">2. Zweiter Eintrag</li>
+            <li class="item">3. Dritter Eintrag</li>
+        </ul>
+    </div>
+
+    <script>
+        const containerElement = document.querySelector(".container");
+        const titelElement = document.getElementById("title");
+        const loremElements = document.getElementsByClassName("lorem");
+        const subtitleElement = document.querySelector("#subtitle > span");
+        const allLiItems = document.querySelectorAll("#list li.item");
+
+        /**
+         * Element.style
+         * @description Das style object bietet uns die möglichkeit den css-style von elementen auszugeben, oder abzuändern.
+         * Wichtig: in JavaScript schreiben wir css-regeln, die wir mit bindestrich kennen (zb text-align) in camelCase (textAlign).
+         * @returns { object }
+         */
+
+        // wenn wir uns das style-objekt ausgeben lassen, haben wir eine schöne übersicht über mögliche css-regeln.
+        console.log(titelElement.style);
+        titelElement.style.textAlign = "center";
+        titelElement.style.background = "tomato";
+        titelElement.style.color = "white";
+
+        /**
+         * Element.innerText;
+         * Mit der property Element.innerText; können wir den text innerhalb eines HTML-elementes zurückgeben oder ändern.
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText
+         * @returns { string }
+         */
+        console.log('text des ersten lorem elements:', loremElements[0].innerText);
+        loremElements[0].innerText = "Dies ist ein neuer inhalt!";
+
+        /**
+         * Element.innerHTML;
+         * Diese property/eigenschaft gibt den inhalt innerhalb eines html-elementes zurück, oder ändert ihn ab.
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+         * @params { string } text
+         * @returns { object }
+         */
+        subtitleElement.innerHTML = "<i>Hallo Welt!</i>";
+
+        /**
+         * Element.classList;
+         * Mit Element.classList; können wir uns alle klassen eines objektes ausgeben lassen, 
+         * weitere klassen hinzufügen oder entfernen.
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+         */
+
+        // Eine liste aller klassen die das element besitzt.
+        console.log(allLiItems[0].classList); // item
+        
+        // wir fügen die klasse "active" hinzu...
+        allLiItems[0].classList.add("active"); 
+        
+        // Unsere liste zeigt jetzt sowohl item, wie auch active an.
+        console.log(allLiItems[0].classList); // item, active
+
+        // wir löschen "item"...
+        allLiItems[0].classList.remove("item");
+        
+        // unser item hat jetzt nur noch die klasse "active":
+        console.log("liste mit klassen von allLiItems[0]", allLiItems[0].classList);
+        
+        // mit Element.className können wir unsere klasse ausgeben lassen
+        console.log(allLiItems[0].className);
+
+        /**
+         * Element.id;
+         * mit Element.id; können wir die id des elements ausgeben oder ändern.
+         * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/id
+         */
+        containerElement.id = "page";
+        console.log("containerElement.id:", containerElement.id);
+
+
+    </script>
+</body>
+</html>
