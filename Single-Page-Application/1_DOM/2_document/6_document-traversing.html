@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Traversing</h1>
+    
+    <!-- 
+        Ein guter javascript entwickler muss wissen wie man Traversing nutzt. Traversing, was in deutsch inetwa "durchlaufen"   bedeutet, ist  das selektieren von elementen, über andere elemente.
+
+        Warum müssen wir lernen wie traversing funktioniert in der DOM? warum reicht document.querySelector(); nicht zum selektieren von allen elementen die wir brauchen?
+    -->
+    
+    <!--
+        Sagen wir wir wollen zum haus unseres nachbarn, was wäre der effektivste weg dort hin zu bekommen?
+
+        Wenn wir die adresse kennen, gehen wir direkt von unserem haus zum nachbarhaus.
+        Wenn wir die adresse nicht kennen, googlen wir die adresse und laufen dann dort hin, anhand der wegbeschreibung.
+
+        Wenn wir direkt von unserem haus zu seinem gehen, nutzen wir praktisch traversing, da wir direkt von unserem haus aus, das nachbarhaus selektieren und dort hin gehen.
+
+        Wenn wir google nutzen um die adresse zu finden, und dann der wegbeschreibung folgen, nutzen wir praktisch document.querySelector();, egal wie lang der weg ist.
+
+        Offenkundig ist traversing also effizienter.
+
+        In der DOM können uns in 3 verschidenen richtungen bewegen:
+        - Nach unten
+        - Nach Oben
+        - Zur Seite 
+
+        Wenn wir den QuerySelector auf elementEbene nutzen, also element.querySelector(); anstelle von document.querySelector(); können wir uns von einem element aus, innerhalb dieses elementes, also im elementbaum NACH UNTEN, nach dem gesuchten element suchen.
+
+        Wenn wir das auf unser Hausbeispiel anwenden, wäre es ziemlich einfach, und viel schneller, innerhalb unseres hauses einen raum zu finden, anstelle das haus zu suchen, und dann den raum zu suchen.
+    -->
+    
+    <h2>Traversing: Nach unten</h2>
+    
+    <p>
+        Nach unten bewegen wir uns mit Element.QuerySelector, Element.querySeelctorAll und .children.
+    </p>
+    
+    <h3>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector">
+            Element.QuerySelector();
+        </a>
+    </h3>
+
+    <div class="nachbarschaft">
+        <div id="unserHaus">Unser &#127968;
+            <div id="wohnzimmer">- Wohnzimmer</div>
+            <div class="badezimmer">- Badezimmer</div>
+            <div class="schlafzimmer">- Schlafzimmer</div>
+            <div class="kueche">- Küche</div>
+        </div>
+        <div id="nachbarHaus">Nachbar &#127968;</div>
+    </div>
+
+    <script>
+        const haus = document.querySelector("#unserHaus");
+        const wohnzimmer = haus.querySelector("#wohnzimmer");
+
+        console.log(wohnzimmer);
+    </script>
+
+    <h3>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children">
+            ParentNode.children;
+        </a>
+
+    </h3>
+
+    <p>
+        Mit dieser methode bekommen wir direkt die kinder eines elementes, also elemente die sich innerhalb eines anderen elementes befinden. Wir kriegen eine Array des types HTMLCollection zurück, die automatisch geupdated wird, wenn sich in einem der elemente etwas ändern.
+    </p>
+
+    <ul id="liste">
+        <li><a href="#">Eintrag 1</a></li>
+        <li><a href="#">Eintrag 2</a></li>
+        <li><a href="#">Eintrag 3</a></li>
+        <li><a href="#">Eintrag 4</a></li>
+        <li><a href="#">Eintrag 5</a></li>
+    </ul>
+    
+    <script>
+        const liste = document.querySelector("#liste");
+        const listenEintraege = liste.children;
+
+        console.log(listenEintraege);
+
+        listenEintraege[1].innerText = "Veränderter Eintrag";
+    </script>
+
+    <h2>Traversing: Nach oben</h2>
+
+    <p>
+        Nach oben, also zu einem übergeordneten element können wir uns mit den befehlen element.parentElement(); und element.closest(); bewegen.
+    </p>
+
+    <h3>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement">
+            Node.parentElement;
+        </a>
+
+    </h3>
+
+    <p>
+        Mit dieser methode können wir direkt vom kindelement aus das elternelement selektieren.
+    </p>
+
+    <ul id="buecherregal">
+        <li id="erstesBuch">Buch 1</li>
+        <li>Buch 2</li>
+        <li>Buch 3</li>
+        <li>Buch 4</li>
+        <li>Buch 5</li>
+    </ul>
+    
+    <script>
+        const erstesBuch = document.querySelector('#erstesBuch');
+        const regal = erstesBuch.parentElement;
+
+        console.log(regal)
+    </script>
+
+    <h3>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/closest">
+            Element.closest();
+        </a>
+    </h3>
+
+    <p>
+        element.parentElement; ist eine sehr gute methode um eine einzelne ebene nach oben zu kommen, um aber ein element ein paar ebenen höher zu bekommen, gibt es die methode element.closest();, da wir mir dieser methode den nächstgelegenen selektor der zur prüfung passt. 
+    </p>
+
+    <i>
+        element.closest; ist ziemlich neu, und wird bisher nicht von jedem browser unterstützt.
+    </i>
+    
+    <div id="ganzWeitAussen">
+        <div id="ziemlichWeitAussen">
+            <div id="aussen">
+                <div id="innen">
+                    Das innerste Element
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const inneresElement = document.querySelector('#innen');
+        const auesseresElement = inneresElement.closest("#ganzWeitAussen");
+
+        console.log(auesseresElement);
+    </script>
+
+    <h2>Traversing: Seitwärts</h2>
+
+    <p>
+        Um uns seitwärts zu traversen gibt es verschiedene methoden, zum beispiel element.nextElementSibling(); und element.previousElementSibling();.
+    </p>
+
+    <h3>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/nextElementSibling">
+            element.nextElementSibling();
+        </a>
+    </h3>
+
+    <p>Mit dieser methode können wir das nächstgelegene element selektieren.</p>
+
+    <ul id="eineKleineListe">
+        <li>Eintrag 1</li>
+        <li>Eintrag 2</li>
+        <li>Eintrag 3</li>
+    </ul>
+
+    <script>
+        const erstesElement = document.querySelector("#eineKleineListe li");
+        const zweitesElement = erstesElement.nextElementSibling;
+
+        console.log(zweitesElement);
+    </script>
+
+    <h3>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/previousElementSibling">
+            element.previousElementSibling();
+        </a>
+    </h3>
+    
+    <p>
+        mit dieser methode können wir das vorherige element selektieren.
+    </p>
+
+    <ul id="nochEineKleineListe">
+        <li>Eintrag 1</li>
+        <li>Eintrag 2</li>
+        <li>Eintrag 3</li>
+    </ul>
+
+    <script>
+        const zweitesListenElement = document.querySelectorAll('#nochEineKleineListe li')[1]
+        const erstesListenElement = zweitesListenElement.previousElementSibling;
+
+        console.log(erstesListenElement)
+    </script>
+
+    <h3>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/matches">
+            Element.matches();
+        </a>
+    </h3>
+
+    <p>
+        Diese methode überprüft ob ein element anhand einer selektion das richtige ist und gibt anhand der entscheidung einen boolean zurück.
+    </p>
+
+    <ul id="benutzerListe">
+        <li>Max</li>
+        <li>James</li>
+        <li>Henry</li>
+        <li class="admin">Bruce</li>
+        <li>Michael</li>
+    </ul>
+
+    <script>
+        const benuzter = document.querySelectorAll('#benutzerListe > li');
+        
+        for (let i = 0; i < benuzter.length; i++)
+        {
+            if(benuzter[i].matches('.admin'))
+            {
+                console.log("Unser admin heisst: " + benuzter[i].innerText);
+            }
+        }
+    </script>
+
+    <h3>Kombination aus element.parentELement();, children und index</h3>
+
+    <p>
+       Es gibt noch einen weg ein element auf der gleichen ebene zu selektieren, indem man mehrere befehle kombiniert.
+    </p>
+
+    <ul id="rezepteListe">
+        <li>Rezept 1</li>
+        <li>Rezept 2</li>
+        <li>Rezept 3</li>
+        <li>Rezept 4</li>
+        <li>Rezept 5</li>
+    </ul>
+
+    <script>
+        // wir selektieren das erste element in der liste
+        const erstesRezept = document.querySelector('#rezepteListe li')
+
+        // wir holen uns das elternelement (die liste)
+        const rezepteListe = erstesRezept.parentElement;
+
+        // wir holen uns die kinder der liste
+        const alleRezepte = rezepteListe.children;
+
+        // wir holen uns das vierte element der liste
+        const viertesRezept = alleRezepte[3];
+
+        // Jetzt geben wir das vierte element aus
+        console.log(viertesRezept);
+
+        // Das ganze geht natürlich auch in einem schritt, als "chained method":
+        const viertesRezeptAlsKette = erstesRezept.parentElement.children[3];
+
+        console.log(viertesRezeptAlsKette);
+    </script>
+</body>
+</html>
