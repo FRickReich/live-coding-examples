@@ -11,7 +11,7 @@
     <h1>Traversing</h1>
     
     <!-- 
-        Ein guter javascript entwickler muss wissen wie man Traversing nutzt. Traversing, was in deutsch inetwa "durchlaufen"   bedeutet, ist  das selektieren von elementen, über andere elemente.
+        Ein guter javascript entwickler muss wissen wie man Traversing nutzt. Traversing, was in deutsch inetwa "durchlaufen" bedeutet, ist das selektieren von elementen, über andere elemente.
 
         Warum müssen wir lernen wie traversing funktioniert in der DOM? warum reicht document.querySelector(); nicht zum selektieren von allen elementen die wir brauchen?
     -->
@@ -32,13 +32,15 @@
         - Nach unten
         - Nach Oben
         - Zur Seite 
-
-        Wenn wir den QuerySelector auf elementEbene nutzen, also element.querySelector(); anstelle von document.querySelector(); können wir uns von einem element aus, innerhalb dieses elementes, also im elementbaum NACH UNTEN, nach dem gesuchten element suchen.
-
-        Wenn wir das auf unser Hausbeispiel anwenden, wäre es ziemlich einfach, und viel schneller, innerhalb unseres hauses einen raum zu finden, anstelle das haus zu suchen, und dann den raum zu suchen.
     -->
     
     <h2>Traversing: Nach unten</h2>
+
+    <!-- 
+        Wenn wir den QuerySelector auf elementEbene nutzen, also element.querySelector(); anstelle von document.querySelector(); können wir von einem element aus tiefer in den elementBaum hinein nach dem gesuchten element suchen.
+
+        Wenn wir das auf unser Hausbeispiel anwenden, wäre es ziemlich einfach, und viel schneller, innerhalb unseres hauses einen raum zu finden, anstelle erst das haus zu suchen, und dann den raum zu suchen.
+     -->
     
     <p>
         Nach unten bewegen wir uns mit Element.QuerySelector, Element.querySeelctorAll und .children.

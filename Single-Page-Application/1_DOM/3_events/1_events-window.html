@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Events</h1>
+
+        <h2>Was sind events?</h2>
+
+        <!--         
+            events sind befehle, die im browser ausgelöst werden, wenn etwas bestimmtes passiert ist, wie ein button click, 
+            oder das verändern der größe des browsers.
+
+            Ein event gibt uns ein callback zurück, 
+            das bedeutet das wir als antwort auf eine erfolgreiche aktion direkt die möglichkeit haben mit den übergebenen daten zu arbeiten,
+            das kennen wir schon von .forEach(); oder .map(); events geben uns ein objekt zurück, das informationen zum jeweiligen event beinhaltet.
+
+            Ein beispiel für diese art der codebehandlung wäre zum beispiel
+            eine online zahlung mit paypal oder einem ähnlichen service:
+            - wir bestellen den artikel und werden auf die paypal seite weitergeleitet, dort bestätigen wir unsere eingaben,
+            und erst wenn unsere daten und geldmittel validiert wurden, und dadurch der kauf erfolgreich durchgeführt werden kann,
+            werden wir auf die shopseite zurückgeführt, der callback passiert hier auf seiten von paypal, 
+            und wird ausgeführt, wenn wir den bestätigen button gedrückt haben.
+        -->
+    
+        es gibt zwei wege die typischen eventlistener zu nutzen, die methode .addeventlistener(); und den parameter on;
+
+        <!--
+            früher war es nötig für jedes event einen eventlistener zu schreiben,
+            heutzutage wird von den meisten browsern eine kürzere methode unterstützt,
+            .addEventListener(); ist allerdings beim erstellen eigener events wichtig.
+            
+            Wir nutzen den neuen weg, und schreiben ihn im arrow-function stil.
+        -->
+
+        <script>
+            // der alte weg: document.addEventListener('keydown', function(event));
+            // der neue weg: document.onkeydown = function(event);
+            // der neue weg als arrow function: window.onload = (event) => {};
+        </script>
+
+
+    <h2>Window</h2>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event">
+                Window.onload;
+            </a>
+        </h3>
+    
+        <p>
+            Dieses Event führt einen callback aus wenn das browserfenster fertig geladen hat, 
+            also wenn alle resourcen der angezeigten html datei heruntergeladen wurden.
+        </p>
+
+        <ul>
+            <li>
+                <code>window.addEventListener('load', (event) => {});</code>
+            </li>
+            <li>
+                <code>window.onload = (event) => {}</code>
+            </li>
+        </ul>
+    
+        <script>
+            window.onload = (event) => {
+                console.log(".onload; - Die seite wurde fertig geladen!", event);
+            };
+        </script>
+    </section>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event">    
+                Window.resize;
+            </a>
+        </h3>
+    
+        <p>
+            Das .resize; event führt einen callback aus, wenn die größe des browserfensters verändert wurde.
+        </p>
+    
+        <ul>
+            <li>
+                <code>window.addEventListener('resize', (event) => {});</code>
+            </li>
+            <li>
+                <code>window.onresize = (event) => {}</code>
+            </li>
+        </ul>
+    
+        <script>
+            window.onresize = (event) =>
+            {
+                console.log(".onresize; - Wir haben die browsergröße verändert");
+                console.log("breite: " + window.innerWidth);
+                console.log("höhe:" + window.innerHeight);
+            }
+        </script>
+    </section>
+</body>
+</html>

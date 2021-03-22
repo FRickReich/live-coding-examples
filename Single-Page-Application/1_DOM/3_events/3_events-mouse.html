@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Mouse</h2>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove">
+                GlobalEventHandlers.onmousemove;
+            </a>
+        </h3>
+
+        <p>
+            Dieses event wird abgefeuert wenn der benutzer die maus innerhalb des selektierten elementes bewegt, 
+            das kann das ganze dokument sein, aber auch einzelne elemente.
+        </p>
+
+        <ul>
+            <li>element.addEventListener('mousemove', (event) => {})</li>
+            <li>element.onmousemove = (event) => {}</li>
+        </ul>
+
+        <div id="mousemoveElement" style="width: 200px; height: 200px; background: red;"></div>
+    
+        <script>
+            let moveCounter = 0;
+
+            document.getElementById("mousemoveElement").onmousemove = () =>
+            {
+                moveCounter++;
+                console.log(moveCounter, "wir befindet uns über dem element");
+            }
+        </script>
+    </section>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover">
+                GlobalEventHandlers.onmouseover;
+            </a>
+        </h3>
+
+        <p>
+           Dieses event wird abgefeuert wenn der benutzer die maus über ein element bewegt.
+           Der unterschied zwischen .onmousemove; und .onmouseover ist das .mouseover; nur einmal abgefeuert wird, 
+           wenn das element "gehovert" wird, während das event bei .onmousemove; konstant ausgelöst wird;
+        </p>
+
+        <ul>
+            <li>element.addEventListener('mouseover', (event) => {})</li>
+            <li>element.onmouseover = (event) => {}</li>
+        </ul>
+    
+        <div id="mouseoverElement" style="width: 200px; height: 200px; background: red;"></div>
+    
+        <script>
+            let overCounter = 0;
+
+            document.getElementById("mouseoverElement").onmouseover = () =>
+            {
+                overCounter++;
+                console.log(overCounter, "wir befindet uns über dem element");
+            }
+        </script>
+    </section>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout">
+                GlobalEventHandlers.onmouseout;
+            </a>
+        </h3>
+
+        <p>
+            Dieses event wird abgefeuert wenn der benutzer ein element mit der maus verlässt.
+        </p>
+
+        <ul>
+            <li>element.addEventListener('mouseout', (event) => {})</li>
+            <li>element.onmouseout = (event) => {}</li>
+        </ul>
+
+        <div id="mouseoutElement" style="width: 200px; height: 200px; background: tomato;"></div>
+    
+        <script>
+            document.getElementById("mouseoutElement").onmouseout = (event) =>
+            {
+                console.log("wir haben das element verlassen");
+            }
+        </script>
+    </section>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown">
+                GlobalEventHandlers.onmousedown;
+            </a>
+        </h3>
+
+        <p>
+            Dieses event wird abgefeuert wenn wir eine maustaste runterdrücken.
+        </p>
+
+        <ul>
+            <li>element.addEventListener('mousedown', (event) => {})</li>
+            <li>element.onmousedown = (event) => {}</li>
+        </ul>
+    
+        <div id="mousedownElement" style="width: 200px; height: 200px; background: tomato;"></div>
+    
+        <script>
+            document.getElementById("mousedownElement").onmousedown = (event) =>
+            {
+                // mit event.button bekommen wir die
+                // - (0) linke maustaste
+                // - (1) mittlere maustaste
+                // - (2) rechte maustaste
+
+                if(event.button === 0)
+                {
+                    console.log("Wir haben die LINKE maustaste gedrückt");
+                }
+                else if(event.button === 2)
+                {
+                    console.log("Wir haben die RECHTE maustaste gedrückt");
+                }
+            }
+        </script>
+    </section>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup">
+                GlobalEventHandlers.onmouseup;
+            </a>
+        </h3>
+
+        <p>
+            Dieses event wird abgefeuert wenn der benutzer die maustaste die maustaste loslässt.
+        </p>
+
+        <ul>
+            <li>element.addEventListener('mouseup', (event) => {})</li>
+            <li>element.onmouseup = (event) => {}</li>
+        </ul>
+    
+        <div id="mouseupElement" style="width: 200px; height: 200px; background: tomato;"></div>
+
+        <script>
+            document.getElementById("mouseupElement").onmouseup = (event) =>
+            {
+                console.log("wir haben die maustaste losgelassen!");
+            }
+        </script>
+    </section>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick">
+                GlobalEventHandlers.onclick;
+            </a>
+        </h3>
+    
+        <p>
+            Das event wird abgefeuert wenn der benutzer auf ein element klickt, auf die vorherigen beiden events bezogen, 
+            wird .onclick; nach .mousedown; und .mouseup; abgefeuert.
+        </p>
+    
+        <ul>
+            <li>element.addEventListener('click', (event) => {})</li>
+            <li>element.onchange = (onclick) => {}</li>
+        </ul>
+
+        <div id="clickElement" style="width: 200px; height: 200px; background: tomato;"></div>
+
+        <script>
+            document.getElementById("clickElement").onclick = (event) =>
+            {
+                event.target.style.borderRadius = Math.floor(Math.random() * 100)  + "px";
+                console.log("Click!");
+            }
+        </script>
+    </section>
+
+</body>
+</html>

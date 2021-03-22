@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Keyboard</h2>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeydown">
+                document.onkeydown;
+            </a>
+        </h3>
+
+        <p>
+            Dieses event wird abgefeuert wenn der benutzer eine taste auf seiner tastatur drückt.
+        </p>
+
+        <ul>
+            <li>element.addEventListener('keydown', (event) => {})</li>
+            <li>element.onkeydown = (event) => {}</li>
+        </ul>
+
+        <p>Wir haben folgende taste gedrückt:
+            <span id="onkeydownElement" style="color: tomato; font-size: 32px"></span>
+        </p>
+
+        <script>
+            const outputDownElement = document.getElementById("onkeydownElement");
+
+            document.onkeydown = (event) => 
+            {
+                // mit event.key bekommen wir die aktuell gedrückten Taste zurück.
+                outputDownElement.innerText = event.key;
+            }
+        </script>
+    </section>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup">
+                document.onkeyup;
+            </a>
+        </h3>
+
+        <p>
+            Dieses event wird abgefeuert wenn eine taste losgelassen wird.
+        </p>
+
+        <ul>
+            <li>element.addEventListener('keyup', (event) => {})</li>
+            <li>element.onkeyup = (event) => {}</li>
+        </ul>
+    
+        <p>Wir haben folgende taste losgelassen:
+            <span id="onkeyupElement" style="color: tomato; font-size: 32px"></span>
+        </p>
+
+        <script>
+            const outputUpElement = document.getElementById("onkeyupElement");
+
+            document.onkeyup = (event) => 
+            {
+                // mit event.key bekommen wir die aktuell gedrückten Taste zurück.
+                outputUpElement.innerText = event.key;
+            }
+        </script>
+    </section>
+</body>
+</html>
