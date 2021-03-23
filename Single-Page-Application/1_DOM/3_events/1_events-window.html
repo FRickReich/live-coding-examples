@@ -19,7 +19,36 @@
             Ein event gibt uns ein callback zurück, 
             das bedeutet das wir als antwort auf eine erfolgreiche aktion direkt die möglichkeit haben mit den übergebenen daten zu arbeiten,
             das kennen wir schon von .forEach(); oder .map(); events geben uns ein objekt zurück, das informationen zum jeweiligen event beinhaltet.
+        -->
 
+        <!-- Sagen wir, wir haben einen button der gemütlich seinen kaffee trinkt -->
+        <button id="klickMich">Click</button>
+
+        <!-- Wir haben hier noch einen typen, der managed den code -->
+        <script>
+            // jetzt fügen wir noch eine person hinzu, den eventListener, er macht nix anderes
+            // als sozusagen mit einem ohr zu hören, ob er gerufen wird,
+            // und mit einer hand eine pistole mit papierkügelchen halten, mit der er auf eine funktion zielt.
+            // auf den papierkugeln stehen informationen über das aktuelle element drauf.
+            document.getElementById("klickMich").addEventListener('click', reaktion);
+            
+            // Die arme funktion hier unten, wird vom eventListener mit der wasserpistole bedroht.
+
+            // jetzt kommt der böse benutzer, klickt auf den button, der manager sieht das, schreit laut EVENTLISTENER, FEUER!
+            // der eventlistener feuert sofort auf die funktion, die daraufhin die kugel liest und dann tut wozu sie erschaffen wurde.
+            function reaktion(event)
+            {
+                event.target.style.background = "tomato";
+                console.log("Hilfe!");
+            }
+
+            // und was passiert dann? Alles wird zurückgesetzt, der manager schaut wieder ob was passiert,
+            // der eventListener hört wieder zu, und zielt wieder auf die funktion.
+        </script>
+
+
+
+        <!-- 
             Ein beispiel für diese art der codebehandlung wäre zum beispiel
             eine online zahlung mit paypal oder einem ähnlichen service:
             - wir bestellen den artikel und werden auf die paypal seite weitergeleitet, dort bestätigen wir unsere eingaben,
@@ -28,7 +57,9 @@
             und wird ausgeführt, wenn wir den bestätigen button gedrückt haben.
         -->
     
-        es gibt zwei wege die typischen eventlistener zu nutzen, die methode .addeventlistener(); und den parameter on;
+        <p>
+            es gibt zwei wege die typischen eventlistener zu nutzen, die methode .addeventlistener(); und den parameter on;
+        </p>
 
         <!--
             früher war es nötig für jedes event einen eventlistener zu schreiben,
