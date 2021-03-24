@@ -71,5 +71,36 @@
             }
         </script>
     </section>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup">
+                document.onkeypress;
+            </a>
+        </h3>
+
+        <p>
+            Dieses event wird abgefeuert wenn eine taste heruntergedrückt wird.
+        </p>
+
+        <ul>
+            <li>element.addEventListener('keypress', (event) => {})</li>
+            <li>element.onkeypress = (event) => {}</li>
+        </ul>
+    
+        <p>Wir drücken gerade folgende taste:
+            <span id="onkeypressElement" style="color: tomato; font-size: 32px"></span>
+        </p>
+
+        <script>
+            const outputPressElement = document.getElementById("onkeypressElement");
+
+            document.onkeypress = (event) => 
+            {
+                // mit event.key bekommen wir die aktuell heruntergedrückten Taste zurück.
+                outputPressElement.innerText = event.key;
+            }
+        </script>
+    </section>
 </body>
 </html>
