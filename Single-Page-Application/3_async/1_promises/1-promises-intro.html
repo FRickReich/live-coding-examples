@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Was ist eine Promise?
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+    Eine "Promise" ist ein objekt das "höchstwarscheinlich in naher zukunft" einen wert zurückgibt, oder den grund, wieso dieser wert nicht zurück gegeben wurde. 
+    
+    Ein realbeispiel wäre zum beispiel: euer partner hat euch einkaufen geschickt. Er wartet jetzt darauf das ihr mit frischen erdbeeren wiederkommt. Eure "Promise", also euer "versprechend" ist essentiell nur, das ihr wiederkommt. Habt ihr die erbeeren dabei? waren sie ausverkauft? Das können wir hier beantworten.
+
+    Eine promise kann in 3 möglichen staten zurückkommen:
+    - "fulfilled", also erfüllt, ihr habt die leckeren erdbeeren mitgebracht.
+    - "rejected", also abgelehnt... habt ihr in dem laden vielleicht hausverbot?
+    - "pending", also wartend... scheinbar sind grad keine erdbeeren da, und sie werden heut noch geliefert... irgendwann.
+
+    An eine promise könenn wir auch ein callback anhängen, bedeutet praktisch: wenn ihr also wieder gekommen seid, könnt ihr anhand des status der promise eine reaktion ausgeben..., übergebt ihr freudig die erdbeeren, müsst ihr beichten das ihr die erdbeeren nicht bekommen habt?
+
+    Wie funktionieren Promises?
+
+    Wie schon erwähnt kann eine promise 3 verschiedene staten haben: 
+    - fulfilled, in javascript bekannt als ".resolved();"
+    - rejected, in javascript bekannt als ".reject();"
+    - pending, also wartend...
+
+    Eine wartende promise ist bisher weder erfüllt noch abgelehnt, weswegen eine promise nur dann erfüllt wurde, wenn sie nicht mehr wartet, welcher fall gerade eintritt weiss nur die promise.
+
+    Um zu zeigen was eine promise tut, hier ein beispiel in dem wir den code per timeout stoppen und dann erst ausführen. das "then" sagt uns was passieren soll NACHDEM die promise erfüllt wurde.
+
+    Wir sagen hier "warte 10 sekunden, DANN gebe "Hallo Welt" auf der konsole aus.
+
+    <script>
+        // wir erstellen eine funktion, die eine zeit wartet und dann ein callback ausführt:
+        function warteEtwas(time)
+        {
+            return new Promise((resolve, reject) =>
+            {
+                setTimeout(() =>
+                {    
+                    resolve('Hallo Welt!');
+                    reject(new Error('Ein fehler ist aufgetreten!'));
+                }, 3000);
+            });
+        }
+
+        // Wir führen die funktion aus und übergeben die wartezeit, dann nutzen wir "then":
+        warteEtwas(3000).then(
+            (result) => // Wir übergeben die daten des resolved state
+            { 
+                console.log(result);
+            },
+            (error) => // Wir übergeben die daten des reject state
+            {
+                console.log(error);
+            });
+
+        // Es wird empfohlen jeden promise chain mit .catch(); zu beenden, damit werden fehler aufgefangen und das programm kann weiter laufen.
+        warteEtwas(3000).then(result => console.log(result)).catch((message) => { 
+            console.log(message);
+        });
+
+        // Um eine reihe von promises zu erfüllen gibt es .all();, diese methode wartet bis entweder alle promises gelöst wurden, oder eine abgelehnt wurde, mit resolve(); können wir auch selbst ein ergebnis erzwingen und etwas returnen.
+        const promise1 = Promise.resolve(15);
+        const promise2 = Promise.resolve(11);
+        const promise3 = new Promise((resolve, reject) =>
+        {
+            setTimeout(() =>
+            {
+                resolve("Auf mich sollte man warten!");
+            }, 1000);
+        });
+
+        Promise.all([promise1, promise2, promise3]).then(values =>
+        {
+            console.log(values);
+        });
+    </script>
+
+</body>
+</html>
