@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Fetch Beispiel</h1>
+
+    <h2>Posts</h2>
+
+    <ul id="posts"></ul>
+
+    <script>
+        const postsElement = document.getElementById("posts");
+        const url = 'https://jsonplaceholder.typicode.com/posts';
+
+        fetch(url).then((data) =>
+        {
+            // Wir wandeln die eingetroffenen response daten in json um und geben sie weiter
+            return data.json();
+        }).then((jsonData) =>
+        {
+            // jetzt wo wir die json daten haben, können wir mit ihnen arbeiten
+            console.log(jsonData);
+            jsonData.map(post =>
+            {
+                // Wir erstellen ein LI, ein H3 und ein P element
+                const newListItem = document.createElement("LI");
+                const newTitleElement = document.createElement("H3");
+                const newBodyElement = document.createElement("P");
+
+                // Befüllen die elemente
+                newTitleElement.innerText = post.title;
+                newBodyElement.innerText = post.body;
+
+                // fügen sie zusammen, und dann der liste hinzu.
+                newListItem.append(newTitleElement, newBodyElement);
+                postsElement.append(newListItem);
+            });
+
+        }).catch(function(êrror)
+        {
+            console.log(error);
+        });
+    </script>
+    
+</body>
+</html>
