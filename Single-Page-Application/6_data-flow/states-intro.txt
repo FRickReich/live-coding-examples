@@ -1,0 +1,46 @@
+- initializing and updating states with useState
+- Using reducer of type with useReducer
+- Lazy initialization"
+
+
+
+- Was ist "State"
+
+Das herz eines jeden React Komponenten ist sein "state", ein objekt das entscheidet wie sich ein komponent verhält und angezeigt wird. In Anderen worten, "state" erlaubt dem komponenten dynamisch und interaktiv zuu sein.
+
+Das ganze scheint am anfang sehr abstrakt, aber es ist eigentlich ganz einfach. Denn wie auch mit anderen Themen im bereich der SPA's haben wir uns mit states, ohne es zu wissen, schon unser ganzes leben beschäftigt. 
+
+Wasser und Eis wäre ein gutes beispiel. Was ist der unterschied der beiden? Die Temperatur, denn Eis ist kälter als wasser. Wenn wir aus Wasser Eis machen wollen, müssen wir die temperatur verändern. Wir stecken also unser Wasser in die Gefriertruhe und Bekommen Eis. Wir verändern die Temperatur, und sofort verändert sich etwas am wasser selber, es wird Hart, zu eis.
+
+Das selbe können wir auch bei React, wir ändern eine property des komponenten, der entscheidet wie sich das program verhält.
+
+
+
+- React states
+
+Das State Management ist eine der härtesten teile einer Applikation. Es gibt hunderte wege, tausende plugins und millionen sogenannte "best practices" für diese aufgabe. Over-Engineering ist hier oft ein problem, also halten wir es einfach, und produktionsrelevant.
+
+Seit React vor einiger zeit Hooks implementiert hat, also funktionen die sich in die react lebensphasen einklinken, und damit React massiv verbessert hat, wurde state management drastisch vereinfacht.
+
+Das state objekt ist also ein objekt das sich in den lebenszyklus des komponenten einklinkt, aber was bedeutet das? Wenn wir etwas wie eine Uhr oder einen counter erstellen würden, der jede sekunde die anzeige der seite neu berechnen müsste, wäre es natürlich nicht sonderlich performant wenn es wirklich jede sekunde neu berechnet wird.
+
+React bietet einen besseren weg dieses update zu erreichen, mit hilfe von state. es speichert den aktuellen wert, und wenn dieser überschrieben wird, wird der inhalt neu berechnet.
+
+
+
+-- Was ist der unterschied zwischen states und props?
+
+Wir haben ja props schon kennengelernt, und herausgefunden das props ein objekt ist, das informationen an den komponenten zur kontrolle seinen verhaltens übergibt. Das klingt zwar ähnlich wie State, aber es könnte unterschiedlicher nicht sein.
+
+- während props im elternkontainer festgelegt werden sind states innerhalb des komponenten angelegt. 
+- Props sind immutable, bedeutet, wenn sie übergeben wurden, können sie nicht mehr verändert werden. State kann informationen beinhalten die sich mit der zeit ändern können.
+
+Jetzt wissen wir also grundlagen zu states, und könnten unseren vorhin erwähnten Wasserkomponenten ja mal bauen.
+
+--- create-react-app water-app
+--- Components/Water.js erstellen
+--- In App.js importieren.
+
+--- Weiter in Water App
+
+--- Vielleicht ein weiteres beispiel
