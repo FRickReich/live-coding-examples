@@ -1,0 +1,11 @@
+- Events in REACT
+
+wir hatten das thema events leicht angeschnitten, als ich im intro zu react zeigte, wie man onClick benutzt. Allgemein ist event-handling in react sehr ähnlich zu event-handling bei DOM, ausschließlich in der benennung unterschieden sie sich, denn in React übergeben wir den event handler per funktion, nicht als string, wie wenn wir onclick in ein button element schreiben, und wir schreiben den call in camelCase, also zb onClick mit großem C. Ansonsten gibt es nicht viel zu beachten, auch in react benötigen wir preventDefault(), allerdings ist das event objekt, ein react-internes, das aber vollkompatibel zum native event objekt ist.
+
+- Event-Handler in JSX
+
+--- weiter in events app.
+
+- Event Handler in Komponenten
+
+- Manipulation von states in events.
