@@ -1,0 +1,27 @@
+> useffect/lifecycle
+
+Wir haben uns ja schon angeschaut was hooks machen, und wie sie sich in den lebenszyklus eines komponenten einhaken. Wir haben darüber geredet wie states in funktionalen komponenten gespeichert werden und sind jetzt an einem punkt angekommen, wo wir eine möglichkeit brauchen, mit der wir bestimmen wann und wie wir states ändern und entscheidungen treffen.
+
+Einige konstrukte die wir bisher kennengelernt haben können etwas merkwürdig, wenn nicht sogar konfus erscheinen, die hauptfunktion die wir uns anschauen werden, useEffect, ist da keine ausnahme. Weswegen wir sie uns jetzt in ruhe mal anschauen.
+
+Zur vereinfachung des verständnisses was hooks in react eigentlich machen, möchte ich euch mal ein bild zeigen.
+https://i2.wp.com/blog.logrocket.com/wp-content/uploads/2019/08/hook-flow-e1564426324324.png?resize=730%2C928&ssl=1
+
+wir sehen hier ganz gut wie hooks funktionieren:
+beim sogenannten MOUNT, dem einladen des komponenten werden states angelegt.
+beim update wird die seite gerendert, das dom geupdated und gegebenenfalles sogenannte effekte, funktionen die eigene entscheidungen treffen gelöscht, und neu ausgeführt.
+danach zeigt der browser das ergebnis an, und der vorherige teil wiederholt sich.
+der unmount wird an der stelle ausgeführt, wo der komponent nicht mehr angezeigt wird, dort wird aufgeräumt.
+
+> useEffekt und seiteneffekte:
+
+Ein funktionaler komponent benutzt props und states um seinen inhalt zu erschaffen. Wenn ein komponent eine berechnung anstellt, die nicht direkt mit dem output render zutun haben aber zum "mount" des komponentens berechnet werden sollen, zum beispiel fetch-requests oder timer funktionen wie setTimeout();, nennt man so etwas einen side-effect, und da die rendermethode und diese seiten-effekte voneinander getrennt arbeiten kann man die logik an dieser stelle voneinander trennen.
+
+===> weiter in lifecycle-app, App.js
+
+Wir wissen also jetzt, mit useEffekt können wir uns verschiedene situationen zu nutze machen, die mit dem lebenszyklus, und damit der dynamik unserer
+applikation zutun haben. Wir können seiteneffekte direkt zu anfang ausführen, sie konstant wiederholen, oder nur bei spezifischen aktionen auslösen. Das gibt uns weitreichende möglichkeiten in der entwicklung.
+
+Bauen wir noch eine app, diesmal fetchen wir uns daten aus dem internet und lassen sie uns in react anzeigen, und sehen so ein paar weitere wichtige dinge im gebrauch mit effekten.
+
+===> weiter in fetch-app, App.js
