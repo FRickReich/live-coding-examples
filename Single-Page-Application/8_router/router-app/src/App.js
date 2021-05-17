@@ -10,6 +10,7 @@ import { Switch } from 'react-router-dom';
 import Home from './Pages/Home';
 import Blog from './Pages/Blog';
 import Contacts from './Pages/Contacts';
+import Profile from './Pages/Profile';
 
 import './App.css';
 
@@ -20,9 +21,11 @@ function App()
             {/* 8. Wir können ausserhalb des routers ein navigation anlegen, um uns zu den verschiedenen pfaden zu bewegen. */}
 
             <header>
-                <a href="/">Homepage</a>&nbsp;
-                <a href="/blog">Blog</a>&nbsp;
-                <a href="/contacts">Kontakt</a>
+                <a href="/">Homepage</a>&nbsp;&nbsp;
+                <a href="/blog">Blog</a>&nbsp;&nbsp;
+                <a href="/contacts">Kontakt</a>&nbsp;&nbsp;
+                <a href="/user/MeinBenutzerName">Profil von Benutzer 1</a>&nbsp;&nbsp;
+                <a href="/user/HalloichBinIch">Profil von Benutzer 2</a>
             </header>
 
             {/* 9. wenn wir die pfade jetzt besuchen, stoßen wir aber auf ein problem. von home aus, werden die anderen komponenten, die im pfad weiter unten sind, auch angezeigt. Das können wir umgehen, indem wir einen switch benutzen. React-router-dom hat dafür einen komponenten */}
@@ -51,6 +54,7 @@ function App()
                     {/* 7. Wir legen jetzt die anderen routen an, indem wir jeweils einen pfad, und einen komponenten angeben. */}
                     <Route path="/blog" component={ Blog } />
                     <Route path="/contacts" component={ Contacts } />
+                    <Route path="/user/:id" component={ Profile } />
                 </Switch>
             </BrowserRouter>
         </div>

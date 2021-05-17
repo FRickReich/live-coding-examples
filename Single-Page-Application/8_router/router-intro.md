@@ -54,25 +54,3 @@ befüllen wir die komponenten mal ein wenig, damit wir später unterschiede sehe
 
 --> weiter in App.js
 
-
-
-
-
-
-Dienstag:
-
-Router advanced:
-- history, was ist es, wo findet man mehr info
-- exact und reihenfolge von switches
-- 404
-
-Router navigation:
-- Using `<Link>` to navigate to a path
-- Creating a Navigation bar with `<NavLink activeClassName=""[...]"">`
-- Library clash: Using reactstrap `<NavLink>` with react-router `<NavLink>`
-  https://github.com/reactstrap/reactstrap/issues/1285#issuecomment-446592497
-- Redirecting components: `<Redirect>`"
-
-Route Parameters:
-- Creating dynamic route paths with route params: the `/:<param>` notation
-- Route props: Accessing route params with the `match.params` prop"
